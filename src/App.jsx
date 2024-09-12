@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 
 function App() {
-  // Estado para la nueva tarea y para la lista de tareas
   const [tarea, setTarea] = useState("");
   const [listaTareas, setListaTareas] = useState([]);
 
-  // Función que maneja la adición de una nueva tarea
   const agregarTarea = () => {
     if (tarea !== "") {
       setListaTareas([...listaTareas, tarea]);
-      setTarea("");  // Limpia el input después de agregar la tarea
+      setTarea("");  
     }
   };
 
-  // Función para eliminar una tarea
   const eliminarTarea = (index) => {
     const nuevasTareas = listaTareas.filter((_, i) => i !== index);
     setListaTareas(nuevasTareas);
